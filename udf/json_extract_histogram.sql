@@ -60,7 +60,7 @@ CREATE OR REPLACE FUNCTION udf.json_extract_histogram(input STRING) AS (
   WHEN
     ARRAY_LENGTH(SPLIT(input, ',')) = 2
   THEN
-    -- Input is a compactly encoded histogram like "0,5"
+    -- Input is a compactly encoded boolean histogram like "0,5"
     STRUCT(
       3 AS bucket_count,
       2 AS histogram_type,
